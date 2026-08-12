@@ -1,5 +1,0 @@
-- generic [active]:
-  - status [ref=e1]:
-    - generic [ref=e2]: MS
-    - generic [ref=e3]: Loading
-  - alert [ref=e4]
