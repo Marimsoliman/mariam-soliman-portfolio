@@ -1,0 +1,67 @@
+- generic [active] [ref=f25e1]:
+  - paragraph [ref=f25e6]: Loading
+  - navigation "Primary":
+    - generic:
+      - link "MS*" [ref=f25e7] [cursor=pointer]:
+        - /url: "#hero"
+      - generic:
+        - link "Work" [ref=f25e8] [cursor=pointer]:
+          - /url: "#work"
+        - link "About" [ref=f25e9] [cursor=pointer]:
+          - /url: "#about"
+        - link "Experience" [ref=f25e10] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Contact" [ref=f25e11] [cursor=pointer]:
+          - /url: "#contact"
+    - generic:
+      - generic:
+        - link "MS*" [ref=f25e12] [cursor=pointer]:
+          - /url: "#hero"
+        - generic [ref=f25e13]:
+          - link "LinkedIn" [ref=f25e14] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/mariam-tarek-728184320/
+          - link "WhatsApp" [ref=f25e15] [cursor=pointer]:
+            - /url: https://wa.me/201273661884
+        - paragraph: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+      - generic [ref=f25e16]:
+        - link "Work" [ref=f25e17] [cursor=pointer]:
+          - /url: "#work"
+        - link "About" [ref=f25e20] [cursor=pointer]:
+          - /url: "#about"
+        - link "Experience" [ref=f25e23] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Contact" [ref=f25e26] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=f25e29]:
+        - link "[PLACEHOLDER — awaiting real email]" [ref=f25e30] [cursor=pointer]:
+          - /url: mailto:[PLACEHOLDER — awaiting real email]
+        - link "Let's Talk" [ref=f25e31] [cursor=pointer]:
+          - /url: "#contact"
+  - main [ref=f25e32]:
+    - generic [ref=f25e33]:
+      - generic: SOLIMAN
+      - generic "FULL-STACK DEVELOPER developer":
+        - generic:
+          - heading "FULL-STACK" [level=1]
+        - generic:
+          - heading "DEVELOPER" [level=1]
+      - figure "Mariam Soliman Cairo · Creative Developer" [ref=f25e35]:
+        - generic [ref=f25e36]: Portrait — asset pending
+        - generic [ref=f25e38]:
+          - generic [ref=f25e39]: Mariam Soliman
+          - generic [ref=f25e40]: Cairo · Creative Developer
+      - generic [ref=f25e41]:
+        - paragraph [ref=f25e42]: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+        - generic [ref=f25e43]:
+          - link "View Work →" [ref=f25e44] [cursor=pointer]:
+            - /url: "#work"
+          - link "Contact" [ref=f25e46] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=f25e48]: Scroll
+    - generic [ref=f25e52]:
+      - paragraph [ref=f25e53]: Selected Work
+      - heading "Projects" [level=2] [ref=f25e54]
+      - paragraph [ref=f25e55]: A selection of web, mobile and full-stack work built for real products.
+    - paragraph [ref=f25e57]: About
+    - paragraph [ref=f25e59]: Experience
+    - paragraph [ref=f25e61]: Contact

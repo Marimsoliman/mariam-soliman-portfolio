@@ -1,0 +1,67 @@
+- generic [active] [ref=f7e4]:
+  - button "Open Next.js Dev Tools" [ref=f7e10] [cursor=pointer]
+  - alert [ref=f7e14]
+  - generic:
+    - generic:
+      - generic:
+        - generic: Mariam
+        - generic: Soliman.
+    - generic:
+      - banner:
+        - paragraph: Creative Developer — Cairo, Egypt
+        - generic "Focus areas":
+          - generic: Visual Design/
+          - generic: Creative Development/
+          - generic: Interactive Experiences
+        - paragraph: I craft identities, interfaces and interactive experiences at the intersection of design and code.
+        - paragraph: Cairo, Egypt
+        - generic:
+          - button "View Work ↓" [ref=f7e18] [cursor=pointer]:
+            - text: View Work
+            - generic [ref=f7e19]: ↓
+          - button "About Me" [ref=f7e20] [cursor=pointer]
+      - generic: Scroll to explore
+    - navigation "Sections" [ref=f7e21]:
+      - link "Mariam Soliman Creative Developer" [ref=f7e22] [cursor=pointer]:
+        - /url: "#hero"
+        - generic [ref=f7e23]: Mariam Soliman
+        - generic [ref=f7e24]: Creative Developer
+      - list [ref=f7e25]:
+        - listitem [ref=f7e26]:
+          - link "01 About" [ref=f7e27] [cursor=pointer]:
+            - /url: "#about"
+            - generic [ref=f7e28]: "01"
+            - generic [ref=f7e29]: About
+        - listitem [ref=f7e30]:
+          - link "02 Work" [ref=f7e31] [cursor=pointer]:
+            - /url: "#work"
+            - generic [ref=f7e32]: "02"
+            - generic [ref=f7e33]: Work
+        - listitem [ref=f7e34]:
+          - link "03 Experiments" [ref=f7e35] [cursor=pointer]:
+            - /url: "#experiments"
+            - generic [ref=f7e36]: "03"
+            - generic [ref=f7e37]: Experiments
+        - listitem [ref=f7e38]:
+          - link "04 Contact" [ref=f7e39] [cursor=pointer]:
+            - /url: "#contact"
+            - generic [ref=f7e40]: "04"
+            - generic [ref=f7e41]: Contact
+      - generic [ref=f7e42]:
+        - paragraph [ref=f7e43]: Cairo, Egypt
+        - link "mariamsoliman.dev@gmail.com" [ref=f7e44] [cursor=pointer]:
+          - /url: mailto:mariamsoliman.dev@gmail.com
+        - generic [ref=f7e45]:
+          - link "LinkedIn" [ref=f7e46] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/mariam-tarek-728184320/
+          - link "WhatsApp" [ref=f7e47] [cursor=pointer]:
+            - /url: https://wa.me/201273661884
+          - link "Facebook" [ref=f7e48] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61584263046994&locale=ar_AR
+    - generic:
+      - list:
+        - listitem: "01"
+        - listitem: "02"
+        - listitem: "03"
+        - listitem: "04"
+        - listitem: "05"
