@@ -1,0 +1,29 @@
+- generic [active] [ref=f15e1]:
+  - paragraph [ref=f15e6]: Loading
+  - main [ref=f15e7]:
+    - generic [ref=f15e8]:
+      - generic: SOLIMAN
+      - generic [ref=f15e10]:
+        - heading "FULL-STACK" [level=1] [ref=f15e12]
+        - heading "DEVELOPER" [level=1] [ref=f15e14]
+      - generic [ref=f15e15]: Portrait[Asset Pending]
+      - generic [ref=f15e18]:
+        - generic [ref=f15e19]:
+          - generic [ref=f15e20]: "7"
+          - generic [ref=f15e21]: Projects
+        - generic [ref=f15e22]:
+          - generic [ref=f15e23]: 4+
+          - generic [ref=f15e24]: Years
+      - paragraph [ref=f15e26]: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+      - generic [ref=f15e27]:
+        - link "View Work →" [ref=f15e28] [cursor=pointer]:
+          - /url: "#work"
+        - link "Contact" [ref=f15e29] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=f15e30]: 0%
+    - generic [ref=f15e34]:
+      - paragraph [ref=f15e35]: Selected Work
+      - heading "Projects" [level=2] [ref=f15e36]
+    - paragraph [ref=f15e38]: About
+    - paragraph [ref=f15e40]: Experience
+    - paragraph [ref=f15e42]: Contact

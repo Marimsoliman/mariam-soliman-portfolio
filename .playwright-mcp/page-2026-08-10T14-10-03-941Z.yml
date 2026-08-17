@@ -1,0 +1,125 @@
+- generic [active] [ref=f41e1]:
+  - paragraph [ref=f41e6]: Loading
+  - navigation "Primary":
+    - generic:
+      - link "MS*" [ref=f41e7] [cursor=pointer]:
+        - /url: "#hero"
+      - generic:
+        - link "Work" [ref=f41e8] [cursor=pointer]:
+          - /url: "#work"
+        - link "About" [ref=f41e9] [cursor=pointer]:
+          - /url: "#about"
+        - link "Experience" [ref=f41e10] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Contact" [ref=f41e11] [cursor=pointer]:
+          - /url: "#contact"
+    - generic:
+      - generic:
+        - link "MS*" [ref=f41e12] [cursor=pointer]:
+          - /url: "#hero"
+        - generic [ref=f41e13]:
+          - link "LinkedIn" [ref=f41e14] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/mariam-tarek-728184320/
+          - link "WhatsApp" [ref=f41e15] [cursor=pointer]:
+            - /url: https://wa.me/201273661884
+        - paragraph: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+      - generic [ref=f41e16]:
+        - link "Work" [ref=f41e17] [cursor=pointer]:
+          - /url: "#work"
+        - link "About" [ref=f41e20] [cursor=pointer]:
+          - /url: "#about"
+        - link "Experience" [ref=f41e23] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Contact" [ref=f41e26] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=f41e29]:
+        - link "[PLACEHOLDER — awaiting real email]" [ref=f41e30] [cursor=pointer]:
+          - /url: mailto:[PLACEHOLDER — awaiting real email]
+        - link "Let's Talk" [ref=f41e31] [cursor=pointer]:
+          - /url: "#contact"
+  - main [ref=f41e32]:
+    - generic [ref=f41e33]:
+      - generic: SOLIMAN
+      - generic "FULL-STACK DEVELOPER developer":
+        - generic:
+          - heading "FULL-STACK" [level=1]
+        - generic:
+          - heading "DEVELOPER" [level=1]
+      - figure "Mariam Soliman Cairo · Creative Developer" [ref=f41e35]:
+        - generic [ref=f41e36]: Portrait — asset pending
+        - generic [ref=f41e38]:
+          - generic [ref=f41e39]: Mariam Soliman
+          - generic [ref=f41e40]: Cairo · Creative Developer
+      - generic [ref=f41e41]:
+        - paragraph [ref=f41e42]: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+        - generic [ref=f41e43]:
+          - link "View Work →" [ref=f41e44] [cursor=pointer]:
+            - /url: "#work"
+          - link "Contact" [ref=f41e46] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=f41e48]: Scroll
+    - generic [ref=f41e52]:
+      - paragraph [ref=f41e53]: Selected Work
+      - heading "Projects" [level=2] [ref=f41e54]
+      - paragraph [ref=f41e55]: A selection of web, mobile and full-stack work built for real products.
+    - generic [ref=f41e56]:
+      - generic [ref=f41e57]:
+        - generic [ref=f41e58]:
+          - generic [ref=f41e59]:
+            - paragraph [ref=f41e60]: About
+            - generic [ref=f41e61]:
+              - heading "I design and build" [level=2] [ref=f41e62]
+              - heading "high-performance" [level=2] [ref=f41e65]
+              - heading "digital experiences." [level=2] [ref=f41e68]
+          - generic [ref=f41e71]:
+            - paragraph [ref=f41e73]: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+            - generic [ref=f41e74]:
+              - paragraph [ref=f41e75]: Role
+              - paragraph [ref=f41e76]: Full-Stack Developer
+              - paragraph [ref=f41e77]: Creative Frontend Developer
+            - generic [ref=f41e78]:
+              - paragraph [ref=f41e79]: Based in
+              - paragraph [ref=f41e80]: Cairo, Egypt
+        - generic [ref=f41e81]:
+          - paragraph [ref=f41e82]: Capabilities
+          - generic [ref=f41e83]:
+            - generic [ref=f41e84]:
+              - generic [ref=f41e85]:
+                - heading "Frontend Engineering" [level=3] [ref=f41e86]
+                - generic [ref=f41e87]:
+                  - generic [ref=f41e88]: React
+                  - generic [ref=f41e89]: Next.js
+                  - generic [ref=f41e90]: TypeScript
+                  - generic [ref=f41e91]: Tailwind CSS
+              - paragraph [ref=f41e92]: Building performant, accessible interfaces with React, Next.js, and TypeScript.
+            - generic [ref=f41e93]:
+              - generic [ref=f41e94]:
+                - heading "Creative Development" [level=3] [ref=f41e95]
+                - generic [ref=f41e96]:
+                  - generic [ref=f41e97]: GSAP
+                  - generic [ref=f41e98]: Three.js
+                  - generic [ref=f41e99]: React Three Fiber
+                  - generic [ref=f41e100]: WebGL
+              - paragraph [ref=f41e101]: Bringing interfaces to life with motion, 3D, and interactive experiences.
+            - generic [ref=f41e102]:
+              - generic [ref=f41e103]:
+                - heading "Full-Stack Systems" [level=3] [ref=f41e104]
+                - generic [ref=f41e105]:
+                  - generic [ref=f41e106]: Node.js
+                  - generic [ref=f41e107]: .NET
+                  - generic [ref=f41e108]: PostgreSQL
+                  - generic [ref=f41e109]: MongoDB
+                  - generic [ref=f41e110]: Supabase
+              - paragraph [ref=f41e111]: End-to-end application architecture with Node.js, databases, and APIs.
+            - generic [ref=f41e112]:
+              - generic [ref=f41e113]:
+                - heading "UI/UX Design" [level=3] [ref=f41e114]
+                - generic [ref=f41e115]:
+                  - generic [ref=f41e116]: Figma
+                  - generic [ref=f41e117]: Design Systems
+                  - generic [ref=f41e118]: Responsive Design
+                  - generic [ref=f41e119]: A11y
+              - paragraph [ref=f41e120]: User-centered design thinking applied to every interface I build.
+      - paragraph [ref=f41e122]: Currently available for select projects and collaborations.
+    - paragraph [ref=f41e124]: Experience
+    - paragraph [ref=f41e126]: Contact

@@ -1,0 +1,96 @@
+- generic [active] [ref=f46e1]:
+  - navigation "Primary":
+    - generic [ref=f46e136]:
+      - generic [ref=f46e139]:
+        - link "MS*" [ref=f46e12] [cursor=pointer]:
+          - /url: "#hero"
+        - generic [ref=f46e13]:
+          - link "LinkedIn" [ref=f46e14] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/mariam-tarek-728184320/
+          - link "WhatsApp" [ref=f46e15] [cursor=pointer]:
+            - /url: https://wa.me/201273661884
+        - paragraph [ref=f46e140]: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+      - generic [ref=f46e16]:
+        - link "Work" [ref=f46e17] [cursor=pointer]:
+          - /url: "#work"
+        - link "About" [ref=f46e20] [cursor=pointer]:
+          - /url: "#about"
+        - link "Experience" [ref=f46e23] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Contact" [ref=f46e26] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=f46e29]:
+        - link "[PLACEHOLDER — awaiting real email]" [ref=f46e30] [cursor=pointer]:
+          - /url: mailto:[PLACEHOLDER — awaiting real email]
+        - link "Let's Talk" [ref=f46e31] [cursor=pointer]:
+          - /url: "#contact"
+  - generic:
+    - link "Work":
+      - /url: "#work"
+    - link "About":
+      - /url: "#about"
+    - link "Experience":
+      - /url: "#experience"
+    - link "Contact":
+      - /url: "#contact"
+  - main [ref=f46e32]:
+    - generic [ref=f46e33]:
+      - generic: SOLIMAN
+      - generic "FULL-STACK DEVELOPER developer":
+        - generic:
+          - heading "FULL-STACK" [level=1]
+        - generic:
+          - heading "DEVELOPER" [level=1]
+      - generic [ref=f46e41]:
+        - paragraph [ref=f46e42]: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+        - generic [ref=f46e43]:
+          - link "View Work →" [ref=f46e44] [cursor=pointer]:
+            - /url: "#work"
+          - link "Contact" [ref=f46e46] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=f46e48]: Scroll
+    - generic [ref=f46e52]:
+      - paragraph [ref=f46e53]: Selected Work
+      - heading "Projects" [level=2] [ref=f46e54]
+      - paragraph [ref=f46e55]: A selection of web, mobile and full-stack work built for real products.
+    - generic [ref=f46e58]:
+      - generic: DESIGN
+      - generic [ref=f46e59]:
+        - paragraph [ref=f46e60]: About
+        - generic [ref=f46e61]:
+          - heading "I design and build" [level=2] [ref=f46e62]
+          - heading "high-performance" [level=2] [ref=f46e65]
+          - heading "digital experiences." [level=2] [ref=f46e68]
+        - generic [ref=f46e71]:
+          - paragraph [ref=f46e73]: I design and build high-performance digital experiences combining frontend engineering, backend systems, motion, interaction and creative technology.
+          - generic [ref=f46e74]:
+            - paragraph [ref=f46e75]: Role
+            - paragraph [ref=f46e76]: Full-Stack Developer
+            - paragraph [ref=f46e77]: Creative Frontend Developer
+          - generic [ref=f46e78]:
+            - paragraph [ref=f46e79]: Based in
+            - paragraph [ref=f46e80]: Cairo, Egypt
+      - generic [ref=f46e81]:
+        - paragraph [ref=f46e82]: Capabilities
+        - generic [ref=f46e83]:
+          - generic [ref=f46e84]: React
+          - generic [ref=f46e86]: Next.js
+          - generic [ref=f46e88]: TypeScript
+          - generic [ref=f46e90]: Tailwind CSS
+          - generic [ref=f46e92]: GSAP
+          - generic [ref=f46e94]: Three.js
+          - generic [ref=f46e96]: React Three Fiber
+          - generic [ref=f46e98]: WebGL
+          - generic [ref=f46e100]: Node.js
+          - generic [ref=f46e102]: .NET
+          - generic [ref=f46e104]: PostgreSQL
+          - generic [ref=f46e106]: MongoDB
+          - generic [ref=f46e108]: Supabase
+          - generic [ref=f46e110]: Figma
+          - generic [ref=f46e112]: Design Systems
+          - generic [ref=f46e114]: Responsive Design
+          - generic [ref=f46e116]: A11y
+    - paragraph [ref=f46e119]: Experience
+    - paragraph [ref=f46e121]: Contact
+  - button "Open Next.js Dev Tools" [ref=f46e132] [cursor=pointer]
+  - alert [ref=f46e122]: FULL-STACK
