@@ -1003,4 +1003,207 @@ LET'S TALK SECTION
   .mariam-portfolio.nav-active .cinematic-nav .tech-marquee-section {
     margin-top: clamp(6.2rem, 12vh, 7.5rem) !important;
   }
+}/* =====================================================================
+   ★ STANDALONE TECH MARQUEE (السكشن الأساسي في الصفحة) ★
+   (تم حل مشكلة الارتفاع وضمان نزول السكشن لأسفل الهيرو تماماً)
+===================================================================== */
+.tech-marquee-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 0;
+  margin-top: 4rem;
+  background: #080305;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 10;
+}
+
+.tech-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+}
+
+.tech-marquee-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.marquee-text {
+  font-size: 1.1rem;
+}
+
+.marquee-divider {
+  display: flex;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+/* 📱 ضبط شاشات التابلت والموبايل (إجبار التنزيل للأسفل بمسافة عملاقة) 📱 */
+@media (max-width: 768px) {
+  .tech-marquee-section {
+    /* 110vh تعني دفع السكشن لأسفل بمقدار شاشة كاملة و 10% إضافية ليتفادى الـ 3D تماماً */
+    margin-top: 2000vh !important; 
+    padding: 20em 0 !important;
+    position: relative !important;
+    z-index: 50 !important;
+    clear: both !important;
+  }
+
+  .tech-marquee-track {
+    animation-duration: 75s !important;
+  }
+
+  .marquee-text {
+    font-size: 0.9rem !important;
+  }
+
+  .marquee-divider {
+    margin: 0 0.8rem !important;
+  }
+}
+
+/* 📱 الشاشات الصغيرة جداً (آيفون وموبايلات أصغر) 📱 */
+@media (max-width: 480px) {
+  .tech-marquee-section {
+    /* 135vh تدفعه لأسفل شاشات الموبايل الصغيرة لكي يظهر بعد انتهاء حركة الانيميشن والاسم تماماً */
+    margin-top: 1555vh !important; 
+    padding: 0.85rem 0 !important;
+  }
+
+  .marquee-text {
+    font-size:120rem !important;
+  }
+  
+  .marquee-divider {
+    margin: 0 0.6rem !important;
+  }
+}
+
+/* أنيميشن الدوران */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.3333%, 0, 0);
+  }
+}
+
+/* ستايلات النصوص المطبقة داخل الماركي */
+.marquee-text.display-serif {
+  font-family: var(--display) !important;
+  font-weight: 600;
+}
+.marquee-text.display-serif-italic {
+  font-family: var(--display) !important;
+  font-style: italic;
+  font-weight: 500;
+}
+.marquee-text.mono {
+  font-family: var(--font-mono) !important;
+}
+.marquee-text.sans-bold {
+  font-family: var(--sans) !important;
+  font-weight: 700;
+}
+.marquee-text.sans-light {
+  font-family: var(--sans) !important;
+  font-weight: 300;
+}
+/* =====================================================================
+   ★ TECH MARQUEE داخل السايدبار — تحكم كامل بالمكان ★
+   غيّري قيمة --marquee-top بس علشان تنزليه أو ترفعيه
+===================================================================== */
+:root {
+  --marquee-top: 42dvh;   /* الديسكتوب */
+}
+
+@media (max-width: 768px) {
+  :root { --marquee-top: 60dvh; }   /* 📱 الموبايل — زوّدي الرقم = ينزل أكتر */
+}
+
+@media (max-width: 520px) {
+  :root { --marquee-top: 66dvh; }   /* 📱 الشاشات الصغيرة */
+}
+
+.cinematic-nav .tech-marquee-section {
+  position: absolute !important;
+  top: var(--marquee-top) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;          /* إلغاء أي margin قديم نهائياً */
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0 !important;
+
+  background: transparent;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease, top 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mariam-portfolio.nav-active .cinematic-nav .tech-marquee-section {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cinematic-nav .tech-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+}
+
+.cinematic-nav .tech-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: sidebar-marquee-scroll 24s linear infinite;
+}
+
+.cinematic-nav .tech-marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.cinematic-nav .marquee-text {
+  text-transform: uppercase;
+  font-size: 0.54rem !important;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: 0.04em !important;
+  color: var(--muted);
+}
+
+.cinematic-nav .marquee-text.display-serif        { font-family: var(--display); font-weight: 600; color: var(--ink); }
+.cinematic-nav .marquee-text.display-serif-italic { font-family: var(--display); font-style: italic; font-weight: 600; color: var(--muted); }
+.cinematic-nav .marquee-text.mono                 { font-family: var(--font-mono); color: var(--muted); }
+.cinematic-nav .marquee-text.sans-bold            { font-family: var(--sans); font-weight: 700; color: var(--ink); }
+.cinematic-nav .marquee-text.sans-light           { font-family: var(--sans); font-weight: 300; color: var(--ink); }
+
+.cinematic-nav .marquee-divider { display: flex; align-items: center; opacity: 0.5; }
+.cinematic-nav .marquee-divider svg { width: 8px !important; height: 8px !important; }
+
+@keyframes sidebar-marquee-scroll {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-33.3333%, 0, 0); }
 }

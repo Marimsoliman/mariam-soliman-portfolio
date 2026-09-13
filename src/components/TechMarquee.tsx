@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 
 const MARQUEE_ITEMS = [
@@ -24,7 +25,6 @@ const MARQUEE_ITEMS = [
 ];
 
 export function TechMarquee() {
-  // Triple the items to ensure infinite seamless overflow on ultra-wide screens
   const duplicatedItems = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (
@@ -37,9 +37,9 @@ export function TechMarquee() {
                 {item.text}
               </span>
               <span className="marquee-divider" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <svg width="14" height="14" viewBox="0 0 18 18" fill="none" className="mobile-svg">
                   <path d="M9 1V17" stroke="var(--line)" strokeWidth="1.5" strokeLinecap="round"/>
-                  <circle cx="9" cy="9" r="2.5" fill="#ea580c" />
+                  <circle cx="9" cy="9" r="2" fill="#ea580c" />
                 </svg>
               </span>
             </div>
