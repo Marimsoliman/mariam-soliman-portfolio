@@ -1,3 +1,4 @@
+//sec/components/ChapterNote.tsx
 "use client";
 
 import { useReg } from "@/lib/registry";
@@ -8,7 +9,7 @@ interface ChapterNoteProps {
   title: string;
   name?: string;
   role?: string;
-  body?: string[];
+  body?: readonly string[];
   action?: string;
   onAction?: () => void;
   connectorId?: string;

@@ -1,8 +1,8 @@
+//src/components/sidebarnav.tsx
 "use client";
 
 import { navItems, identity } from "@/lib/content";
 import { scrollToChapter } from "@/lib/scroll";
-
 export function SidebarNav({ active }: { active: string }) {
   return (
     <nav className="nav" aria-label="Sections">
@@ -30,6 +30,7 @@ export function SidebarNav({ active }: { active: string }) {
                 scrollToChapter(item.id);
               }}
             >
+              
               <span className="nav__index">{item.index}</span>
               <span className="nav__label">{item.label}</span>
             </a>

@@ -1,3 +1,4 @@
+//sec/components/ContactStage.tsx
 "use client";
 
 import { contact, identity } from "@/lib/content";

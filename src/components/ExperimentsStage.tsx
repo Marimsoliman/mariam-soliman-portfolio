@@ -1,3 +1,4 @@
+//sec/components/ExperimentsStage.tsx
 "use client";
 
 import { experiments, projects } from "@/lib/content";

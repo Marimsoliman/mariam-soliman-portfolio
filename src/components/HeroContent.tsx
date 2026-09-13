@@ -1,3 +1,4 @@
+//sec/components/HeroContent.tsx
 "use client";
 
 import { hero, identity } from "@/lib/content";
@@ -5,8 +6,6 @@ import { useReg } from "@/lib/registry";
 import { EL } from "@/lib/choreo";
 import { scrollToChapter } from "@/lib/scroll";
 
-/** Hero supporting text — a left column beside the nav. The giant
- *  name lives in <HeroPoster/> (behind the 3D figure). */
 export function HeroContent() {
   const regHero = useReg(EL.hero);
   const regHint = useReg(EL.scrollHint);
@@ -16,15 +15,20 @@ export function HeroContent() {
       <h1 className="sr-only">{identity.name} — {identity.role}</h1>
 
       <header id="hero" ref={regHero} data-el={EL.hero} className="hero">
-        <p className="hero__eyebrow">{hero.eyebrow}</p>
-        <div className="hero-roles" aria-label="Focus areas">
-          {hero.roles.map((r) => (
-            <span key={r} className="hero-roles__item">
-              {r}
-            </span>
-          ))}
+        {/* 🔹 يسار: Creative Developer (أعلى الصفحة) */}
+        <div className="hero__left">
+          <h1 className="hero-title">
+            {hero.roles.join(" ")}
+          </h1>
         </div>
-        <p className="hero-meta__statement">{hero.statement}</p>
+
+        {/* 🔹 يمين: الوصف (أعلى الصفحة) */}
+        <div className="hero__right">
+          <p className="hero-description">{hero.statement}</p>
+        </div>
+
+        {/* العناصر الأخرى (ستظهر لاحقًا عند التمرير) */}
+        <p className="hero__eyebrow">{hero.eyebrow}</p>
         <p className="hero-meta__loc">{identity.location}</p>
         <div className="hero__cta">
           <button

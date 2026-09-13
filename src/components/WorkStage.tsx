@@ -1,3 +1,4 @@
+//src/components/workstage.tsx
 "use client";
 
 import { projects, work } from "@/lib/content";

@@ -1,6 +1,7 @@
+//sec/components/DomOverlay.tsx
 "use client";
 
-import { about } from "@/lib/content";
+import { about, scrollWorld } from "@/lib/content";
 import { EL } from "@/lib/choreo";
 import { scrollToChapter } from "@/lib/scroll";
 import { HeroContent } from "./HeroContent";
@@ -8,6 +9,7 @@ import { ChapterNote } from "./ChapterNote";
 import { WorkStage } from "./WorkStage";
 import { ExperimentsStage } from "./ExperimentsStage";
 import { ContactStage } from "./ContactStage";
+import { ScrollWorldContent } from "./ScrollWorldContent";
 
 export function DomOverlay() {
   return (
@@ -21,9 +23,10 @@ export function DomOverlay() {
         role={about.role}
         body={about.body}
         action={about.action}
-        onAction={() => scrollToChapter("work")}
+        onAction={() => scrollToChapter("scrollWorldOrigin")}
         connectorId={EL.aboutConnector}
       />
+      <ScrollWorldContent />
       <WorkStage />
       <ExperimentsStage />
       <ContactStage />

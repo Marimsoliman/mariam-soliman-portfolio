@@ -126,6 +126,38 @@ export const experiments = {
   note: "Selected experiments in image, type, form and motion.",
 } as const;
 
+export const scrollWorld = {
+  number: "SW",
+  eyebrow: "Scroll World",
+  scenes: [
+    {
+      id: "origin",
+      title: "Digital Origin",
+      body: "Where it all begins — a single pulse of code, alive in the void.",
+    },
+    {
+      id: "building",
+      title: "Architecture",
+      body: "Structures rise, iterated. Logic made visible, standing in light.",
+    },
+    {
+      id: "interface",
+      title: "Interface",
+      body: "Planes of thought. Information finds its shape, its rhythm.",
+    },
+    {
+      id: "experiments",
+      title: "Digital Experiments",
+      body: "Particles drift — trials, errors, breakthroughs. The chaos that teaches.",
+    },
+    {
+      id: "identity",
+      title: "Identity",
+      body: "The mark remains. Mariam Soliman — built from every line before it.",
+    },
+  ],
+} as const;
+
 export const contact = {
   number: "05",
   title: "Let's Talk",

@@ -1,3 +1,4 @@
+//src/components/seceneelements.tsx 
 "use client";
 
 import { useMemo, useRef } from "react";

@@ -1,3 +1,4 @@
+//src/components/scene.tsx
 "use client";
 
 import { useRef } from "react";
@@ -6,6 +7,7 @@ import { Environment, Lightformer } from "@react-three/drei";
 import * as THREE from "three";
 import { SpineGeometry } from "./SpineGeometry";
 import { ColorField } from "./SceneElements";
+import { ScrollWorldStage } from "./ScrollWorld/ScrollWorldStage";
 import { FIELD_SPECS } from "@/lib/choreo";
 import type { ScrollTargets } from "@/lib/choreo";
 
@@ -113,6 +115,7 @@ export function SpineStage({
       ))}
 
       <SpineRig targets={targets} idleMotion={idleMotion} detail={detail} />
-    </>
-  );
-}
+      <ScrollWorldStage targets={targets} />
+      </>
+    );
+  }

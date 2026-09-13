@@ -1,3 +1,4 @@
+//src/components/spinegeometry.tsx
 "use client";
 
 import { useMemo, useRef } from "react";

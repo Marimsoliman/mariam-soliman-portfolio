@@ -1,0 +1,284 @@
+/* =============================================
+   SERVICES SECTION
+   ============================================= */
+.projects-section {
+  position: relative;
+  z-index: 10;
+  background: transparent; /* الخلفية شفافه عشان ياخد الجريدينت */
+  color: var(--ink);
+  padding: clamp(6rem, 12vh, 10rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+.services-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  content: "";
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 35%,
+    #25000D 0%,
+    transparent 70%
+  );
+}
+
+.projects-container {
+  position: relative;
+  height: 100vh; 
+  height: 100dvh;
+  margin-left: 0;
+  width: 100%;
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+.projects-header {
+  position: absolute;
+  top: clamp(30px, 8vh, 80px);
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 0 4vw; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projects-eyebrow,
+.projects-hint {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   TRACK (The Train)
+   ============================================= */
+.projects-track {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: max-content; /* المحافظة على اتجاه القطار بالجنب دائماً */
+  gap: clamp(2.5rem, 5vw, 5rem);
+  padding: 0 10vw; 
+  will-change: transform;
+}
+
+/* =============================================
+   PROJECT CARD
+   ============================================= */
+.project-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; 
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  width: min(78vw, 980px);
+  will-change: transform, opacity;
+}
+
+.project-card__media {
+  position: relative;
+  border-radius: 18px;
+  background: rgba(247, 241, 234, 0.03);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.project-card__image {
+  display: block; 
+  width: 100%;
+  height: auto; 
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.project-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-card__category {
+  color: var(--ink);
+}
+
+.project-card__title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 2.8vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.project-card__description {
+  max-width: 40ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card__tag {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  margin-top: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.85rem;
+  transition: gap 0.25s ease, opacity 0.25s ease;
+}
+
+.project-card__link:hover {
+  gap: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Closing card */
+.project-card--end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  width: min(40vw, 420px);
+  padding-left: clamp(2rem, 4vw, 4rem);
+  border-left: 1px solid var(--line);
+}
+
+.project-card--end__title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+/* =============================================
+   MOBILE (GSAP Sideways On Vertical Scroll)
+   ============================================= */
+@media (max-width: 1024px) {
+  .projects-container {
+    margin-left: 0 !important; /* إلغاء تباعد السايدبار على الموبايل */
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow: hidden !important; /* إبقاء الخاصية ليعمل تثبيت الـ GSAP بنجاح */
+  }
+
+  .projects-header {
+    top: 4vh !important;
+    padding: 0 6vw !important;
+  }
+
+  .projects-track {
+    gap: 8vw !important; /* مسافة مريحة بين الكروت لتبان واضحة */
+    padding: 0 10vw !important;
+    height: 100% !important;
+  }
+
+  /* جعل تفاصيل الكارت تترتب رأسياً داخل الموبايل لكن الكروت نفسها تتحرك أفقياً */
+  .project-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 80vw !important; /* عرض مريح جداً للعين لرؤية المحتوى */
+    max-width: 380px !important;
+    height: 75vh !important; /* تقييد طول الكرت لكي لا يتعدى الشاشة الرأسية */
+    height: 75dvh !important;
+    gap: 1rem !important;
+  }
+
+  /* تحجيم مساحة الصورة لكي تترك مكاناً كافياً للنصوص بالأسفل */
+  .project-card__media {
+    width: 100% !important;
+    height: 28vh !important; /* تحديد الطول كنسبة من الشاشة */
+    max-height: 220px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .project-card__image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .project-card__body {
+    gap: 0.6rem !important;
+    width: 100% !important;
+  }
+
+  .project-card__title {
+    font-size: clamp(1.4rem, 4.5vw, 1.7rem) !important;
+  }
+
+  .project-card__description {
+    max-width: 100% !important;
+    font-size: clamp(0.78rem, 3vw, 0.85rem) !important;
+    line-height: 1.4 !important;
+    /* إظهار 3 أسطر فقط حتى لا يخرج النص عن نطاق الشاشة */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .project-card__tags {
+    gap: 0.35rem !important;
+  }
+
+  .project-card__tag {
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.55rem !important;
+  }
+
+  /* كارت النهاية متناسق أفقياً مع البقية */
+  .project-card--end {
+    width: 65vw !important;
+    max-width: 280px !important;
+    border-left: 1px solid var(--line) !important;
+    border-top: none !important;
+    padding-left: 2rem !important;
+    padding-top: 0 !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+}

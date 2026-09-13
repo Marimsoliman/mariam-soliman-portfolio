@@ -1,3 +1,4 @@
+//sec/components/HeroPoster.tsx
 "use client";
 
 import { hero } from "@/lib/content";

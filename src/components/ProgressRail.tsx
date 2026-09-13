@@ -1,3 +1,4 @@
+//src/components/progressrail.tsx
 "use client";
 
 import { useEffect, useRef, type RefObject } from "react";

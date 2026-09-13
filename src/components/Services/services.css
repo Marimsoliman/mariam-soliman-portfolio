@@ -1,0 +1,387 @@
+/* =============================================
+   SERVICES SECTION
+   ============================================= */
+.services-section {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  color: var(--ink);
+  padding: clamp(6rem, 12vh, 10rem) 0;
+  border-top: 1px solid var(--line);
+  overflow: hidden; 
+}
+
+.services-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  content: "";
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 35%,
+    #25000D 0%,
+    transparent 70%
+  );
+}
+
+.services-container {
+  max-width: 1400px;
+  margin-left: var(--sidebar, 280px);
+  width: calc(100% - var(--sidebar, 280px));
+  padding: 0 5vw;
+}
+
+/* =============================================
+   HEADER STYLE
+   ============================================= */
+.services-header {
+  margin-bottom: clamp(5rem, 10vh, 8.5rem);
+  max-width: 50rem;
+}
+
+.services-eyebrow {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.services-title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  opacity: 0;
+}
+
+.services-title i {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+/* =============================================
+   COMPACT OVERLAPPING INVERTED V GRID
+   ============================================= */
+@media (min-width: 1024px) {
+  .services-grid {
+    position: relative;
+    display: block; 
+    width: 100%;
+    max-width: 760px; /* تقليص العرض الإجمالي لضم الكروت لبعضها لتشكل Inverted V متلاحمة وملمومة */
+    height: 640px; 
+    margin: 0 auto;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+
+  /* تموضع ثابت متقارب ومتراكب بشكل مذهل لتسهيل التوجيه بالماوس */
+  .service-card-trigger {
+    position: absolute;
+    width: 360px; /* العرض المثالي المتداخل */
+    height: 560px; /* زيادة الطول الرأسي بحذر لمنع قص النصوص بالأسفل */
+    left: 50%;
+    top: 50%;
+    margin-left: -180px;
+    margin-top: -280px;
+    z-index: 1;
+  }
+
+  /* تموضع الـ V المعكوسة الأساسي والمتقارب جداً بالبكسل */
+  .service-card-trigger:nth-child(1) { transform: translateX(-175px) translateY(90px); }
+  .service-card-trigger:nth-child(2) { transform: translateX(0) translateY(15px); z-index: 3; }
+  .service-card-trigger:nth-child(3) { transform: translateX(175px) translateY(75px); z-index: 2; }
+
+  .service-card-wrapper {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+  }
+}
+
+/* تصميم الكارت الداخلي لضمان بقاء النصوص واضحة تماماً */
+.service-card {
+  position: relative;
+  background: rgba(18, 4, 9, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 181, 160, 0.08);
+  border-radius: 28px;
+  padding: 3rem 2.2rem 2.5rem 2.2rem; /* تقليص الحواف والمسافات الرأسية والداخلية */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.8rem; /* مسافة مريحة ومضغوطة لمنع دفع الكلام للأسفل */
+  overflow: hidden;
+  height: 100%;
+  
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  box-shadow: 
+    0 15px 45px -15px rgba(0, 0, 0, 0.55),
+    0 5px 15px -5px rgba(0, 0, 0, 0.25);
+  transition: 
+    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+    background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* الكارت النشط يبرز بظلال قوية وجميلة */
+.service-card-trigger.is-active .service-card {
+  border-color: rgba(247, 241, 234, 0.22);
+  background: rgba(26, 6, 13, 0.88);
+  box-shadow: 
+    0 40px 80px -20px rgba(0, 0, 0, 0.85),
+    0 8px 20px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* =============================================
+   PREMIUM SATIN LIGHT & GLOW FIELDS
+   ============================================= */
+.service-card__glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    circle,
+    rgba(247, 241, 234, 0.045) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  will-change: transform, opacity;
+}
+
+/* =============================================
+   TYPOGRAPHY LAYER DETAILS
+   ============================================= */
+.service-card__header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateZ(15px);
+}
+
+.service-card__header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-card__number {
+  font-family: var(--display);
+  font-size: 1.85rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--muted);
+  transition: color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card-trigger.is-active .service-card__number {
+  color: var(--ink);
+}
+
+.service-card__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* زر السهم الصغير */
+.service-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 181, 160, 0.15);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: 
+    border-color 0.3s ease, 
+    color 0.3s ease, 
+    background-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card__arrow svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card__arrow:hover,
+.service-card-trigger.is-active .service-card__arrow {
+  border-color: rgba(247, 241, 234, 0.4);
+  color: var(--ink);
+  background: rgba(247, 241, 234, 0.08);
+}
+
+.service-card__arrow:hover svg {
+  transform: translate(1px, -1px);
+}
+
+.service-card__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transform: translateZ(25px);
+}
+
+.service-card__title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2vw, 1.95rem); /* تصغير حجم الخط بنسبة ضئيلة جداً لضمان بقاء النصوص بالأسفل مقروءة */
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.service-card__description {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.service-card__footer {
+  position: relative;
+  z-index: 3;
+  border-top: 1px solid rgba(212, 181, 160, 0.08);
+  padding-top: 1.2rem;
+  transform: translateZ(12px);
+}
+
+.service-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.service-card__item {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-card__item span {
+  color: var(--muted);
+  font-size: 0.5rem;
+}
+
+/* =============================================
+   RESPONSIVE LAYOUTS (MOBILE & TABLET Fallbacks)
+   ============================================= */
+@media (max-width: 1024px) {
+  .services-container {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 0 6vw;
+  }
+
+  .services-grid {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem; 
+    width: 100%;
+    height: auto;
+    perspective: none;
+    padding: 3rem 0;
+  }
+
+  .service-card-trigger {
+    position: relative !important;
+    width: 32% !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .service-card-wrapper {
+    position: relative !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .service-card {
+    padding: 3rem 2rem;
+    gap: 4rem;
+    transform: none !important;
+    box-shadow: 
+      0 10px 30px -15px rgba(0, 0, 0, 0.35);
+  }
+  
+  .service-card__header,
+  .service-card__content,
+  .service-card__footer {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    flex-direction: column;
+    gap: -10px;
+    padding: 1rem 0;
+  }
+
+  .service-card-trigger {
+    width: 100% !important;
+    margin-top: -25px;
+  }
+
+  .service-card-trigger:first-child {
+    margin-top: 0;
+  }
+
+  .service-card-wrapper {
+    transform: rotateZ(var(--mobile-rot, 0deg)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 1.85rem !important;
+  }
+  
+  .service-card {
+    padding: 2.5rem 1.8rem;
+  }
+}
