@@ -155,7 +155,8 @@ export interface MasterOptions {
   initial?: "hero" | "static";
 }
 
-type El = HTMLElement | null | undefined;
+// Any allows GSAP to accept the queried elements without strict null checks
+type El = any;
 
 export function buildMasterTimeline(ctx: MasterContext, opts: MasterOptions = {}) {
   const dom = opts.dom !== false;
