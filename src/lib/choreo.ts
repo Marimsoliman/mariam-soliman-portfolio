@@ -109,7 +109,7 @@ export const CHAPTERS = [
 ] as const;
 
 export function chapterAt(p: number): string {
-  let cur = CHAPTERS[0].id;
+  let cur: string = CHAPTERS[0].id;
   for (const c of CHAPTERS) if (p >= c.from) cur = c.id;
   return cur;
 }
