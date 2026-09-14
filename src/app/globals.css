@@ -21,7 +21,7 @@
 
   --line: rgba(168, 201, 216, 0.14);
 
-  --sidebar: clamp(9rem, 12vw, 13rem);
+  --sidebar: clamp(8rem, 11vw, 12rem);
   --nav-space: 0rem;
 
   --font-mono: "Space Mono", monospace;
@@ -33,34 +33,48 @@
 }
 
 /* ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬=============
-   🚨 قسم التحكم في تكبير الخطوط (TYPOGRAPHY SCALE CONTROLS)
+   🚨 قسم التحكم في أحجام الخطوط (COMPACT & PRECISE TYPOGRAPHY CONTROLS)
    ============================================= */
 
-/* 1️⃣ تكبير نصوص الهيرو الجانبية (الديسكتوب واللاب توب) */
-.cinematic-nav__hero strong {
-  font-size: clamp(2.5rem, 6.2vw, 8.5rem) !important;
-  line-height: 0.82 !important;
+/* 1️⃣ تصغير وتنعيم نصوص الهيرو الجانبية (Creative Developer) قبل السكرول */
+.mariam-portfolio:not(.nav-active) .cinematic-nav__hero strong {
+  font-size: clamp(1.8rem, 3.8vw, 4.2rem) !important;
+  line-height: 0.85 !important;
 }
-.cinematic-nav__hero p {
-  font-size: clamp(1.1rem, 1.8vw, 2.2rem) !important;
-  line-height: 1.3 !important;
-}
-
-/* 2️⃣ تكبير خطوط النفيجيشن بار */
-.cinematic-nav__brand {
-  font-size: 1.15rem !important;
-}
-.cinematic-nav a {
-  font-size: 1.1rem !important;
-}
-.cinematic-nav__talk {
-  font-size: 1.1rem !important;
-}
-.cinematic-nav__talk span {
-  font-size: 1.5rem !important;
+.mariam-portfolio:not(.nav-active) .cinematic-nav__hero p {
+  font-size: clamp(0.8rem, 0.95vw, 1.1rem) !important;
+  line-height: 1.4 !important;
 }
 
-/* 3️⃣ تكبير خط المهارات التقنية */
+/* 2️⃣ تصغير وتنعيم نصوص روابط النفيجيشن بار وزر Let's talk قبل السكرول */
+.mariam-portfolio:not(.nav-active) .cinematic-nav__brand {
+  font-size: clamp(0.85rem, 0.95vw, 1.1rem) !important;
+}
+.mariam-portfolio:not(.nav-active) .cinematic-nav__links a {
+  font-size: clamp(0.78rem, 0.95vw, 1.1rem) !important;
+}
+.mariam-portfolio:not(.nav-active) .cinematic-nav__talk {
+  font-size: clamp(0.78rem, 0.95vw, 1.1rem) !important;
+}
+
+/* 3️⃣ تصغير نصوص النفيجيشن بار داخل السايدبار الجانبي (بعد السكرول - Active State) */
+.mariam-portfolio.nav-active .cinematic-nav__brand {
+  font-size: 0.82rem !important;
+}
+.mariam-portfolio.nav-active .cinematic-nav__hero strong {
+  font-size: clamp(0.95rem, 1.2vw, 1.35rem) !important;
+}
+.mariam-portfolio.nav-active .cinematic-nav__hero p {
+  font-size: clamp(0.65rem, 0.75vw, 0.85rem) !important;
+}
+.mariam-portfolio.nav-active .cinematic-nav__links a {
+  font-size: clamp(0.68rem, 0.75vw, 0.85rem) !important;
+}
+.mariam-portfolio.nav-active .cinematic-nav__talk {
+  font-size: clamp(0.68rem, 0.75vw, 0.85rem) !important;
+}
+
+/* 4️⃣ تكبير المهارات التقنية داخل كروت الخدمات */
 .service-card__item {
   font-size: clamp(0.95rem, 1.3vw, 1.3rem) !important;
   gap: 0.65rem;
@@ -176,7 +190,7 @@ img, video, svg {
   opacity: 1;
 }
 
-/* ★★★ MARIAM (HERO NAME) - الحجم الأساسي للديسكتوب واللاب توب ★★★ */
+/* ★★★ MARIAM (HERO NAME) - تكبير الاسم لأقصى حد فيزيائي ممكن ★★★ */
 .hero-name {
   position: absolute;
   z-index: 1;
@@ -192,10 +206,10 @@ img, video, svg {
   pointer-events: none;
   
   font-family: var(--font-backdrop) !important;
-  font-size: clamp(5rem, 15vw, 18rem) !important;
+  font-size: clamp(8rem, 23.5vw, 29rem) !important;
   font-weight: 800 !important;
   line-height: 0.65;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.065em;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -219,7 +233,7 @@ img, video, svg {
 }
 
 /* =============================================
-   CINEMATIC NAV
+   CINEMATIC NAV (تكنولوجيا التحول الهيكلي السلس)
    ============================================= */
 .cinematic-nav {
   position: fixed;
@@ -236,16 +250,6 @@ img, video, svg {
   border-right: 1px solid transparent !important;
   pointer-events: none;
   overflow: hidden;
-  transition:
-    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    visibility 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.mariam-portfolio.nav-active .cinematic-nav {
-  background: transparent !important;
-  border-right: 1px solid transparent !important;
-  pointer-events: auto;
 }
 
 .cinematic-nav__brand,
@@ -258,113 +262,326 @@ img, video, svg {
   text-transform: uppercase;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.mariam-portfolio.nav-active .cinematic-nav__brand,
-.mariam-portfolio.nav-active .cinematic-nav__links,
-.mariam-portfolio.nav-active .cinematic-nav__talk {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.cinematic-nav__brand {
-  color: var(--accent);
-}
-
-.cinematic-nav__links {
-  display: grid;
-  gap: 1.25rem;
-  color: var(--muted);
-}
-
-.cinematic-nav a {
-  transition: color 0.25s, transform 0.25s;
-}
-
-.cinematic-nav a:hover {
-  color: var(--accent);
-  transform: translateX(4px);
-}
-
-.cinematic-nav__talk {
-  width: max-content;
-  max-width: 100%;
-  padding-bottom: 0.65rem;
-  border-bottom: 1px solid var(--accent);
-  color: var(--accent);
-}
-
-.cinematic-nav__talk span {
-  font-weight: 500;
 }
 
 /* =============================================
-   نصوص الهيرو الجانبية
+   ⚡ تكنولوجيا التحول الهيكلي للتنقل (FLUID NAVIGATION MORPHING)
    ============================================= */
-.cinematic-nav__hero {
+.cinematic-nav,
+.cinematic-nav__brand,
+.cinematic-nav__hero,
+.cinematic-nav__hero strong,
+.cinematic-nav__hero p,
+.cinematic-nav__links,
+.cinematic-nav__links a,
+.cinematic-nav__talk {
+  transition: 
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    top 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    bottom 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    left 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    right 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    font-size 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    line-height 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    letter-spacing 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    flex-direction 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    gap 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    align-items 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    justify-content 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── وضع البداية: في الهيرو (Not nav-active) ─── */
+.mariam-portfolio:not(.nav-active) .cinematic-nav {
   position: fixed !important;
-  z-index: 120 !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  padding: 0 !important;
+  pointer-events: none;
+  background: transparent !important;
+  border-right: 1px solid transparent !important;
+  display: block !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__brand {
+  position: fixed !important;
+  top: clamp(2rem, 4vh, 3.5rem) !important;
+  left: clamp(1.5rem, 5vw, 6rem) !important;
+  bottom: auto !important;
+  right: auto !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 105 !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__hero {
+  position: fixed !important;
+  bottom: clamp(2.5rem, 5vh, 4.5rem) !important;
+  top: auto !important;
+  left: clamp(1.5rem, 5vw, 6rem) !important;
+  right: auto !important;
+  width: min(48vw, 44rem) !important;
+  max-width: min(48vw, 44rem) !important;
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
   align-items: flex-end !important;
-  pointer-events: none !important;
+  gap: 2rem !important;
   opacity: 1 !important;
   visibility: visible !important;
-  top: calc(100dvh - 12rem) !important;
-  left: clamp(1.25rem, 5vw, 6rem) !important;
-  width: calc(100vw - 2 * clamp(1.25rem, 5vw, 6rem)) !important;
-  max-width: calc(100vw - 2rem) !important;
-  gap: 2rem;
-  transition:
-    top 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    left 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    width 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    flex-direction 0.95s cubic-bezier(0.16, 1, 0.3, 1),
-    align-items 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none !important;
+  z-index: 105 !important;
 }
 
-.cinematic-nav__hero strong {
+.mariam-portfolio:not(.nav-active) .cinematic-nav__hero strong {
   display: block !important;
   font-family: var(--display) !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
   letter-spacing: -0.04em !important;
+  text-transform: uppercase !important;
   color: var(--ink) !important;
   text-align: left !important;
+  margin: 0 !important;
 }
 
-.cinematic-nav__hero p {
+.mariam-portfolio:not(.nav-active) .cinematic-nav__hero p {
   display: block !important;
   margin: 0 !important;
-  max-width: 32ch !important;
-  text-align: right !important;
+  max-width: 24ch !important;
+  font-family: var(--sans) !important;
+  font-weight: 400 !important;
   color: var(--muted) !important;
   letter-spacing: -0.01em !important;
+  text-align: left !important;
+  text-transform: none !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__links {
+  position: fixed !important;
+  bottom: clamp(2.5rem, 5vh, 4.5rem) !important;
+  right: calc(clamp(1.5rem, 5vw, 6rem) + 10rem) !important;
+  top: auto !important;
+  left: auto !important;
+  width: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: clamp(1.5rem, 2.5vw, 3rem) !important;
+  align-items: center !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 105 !important;
+  color: var(--ink) !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__links a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.4rem !important;
+  width: auto !important;
+  padding: 0 !important;
+  border: none !important;
+  font-family: var(--sans) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: capitalize !important;
+  color: var(--ink) !important;
+  line-height: 1.2 !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__links a b {
+  font-size: 1.1em !important;
+  color: var(--accent) !important;
+  font-weight: 400 !important;
+  transition: transform 0.3s ease !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__links a:hover {
+  color: var(--accent) !important;
+  transform: none !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__links a:hover b {
+  transform: translate(3px, -3px);
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__talk {
+  position: fixed !important;
+  bottom: clamp(2.5rem, 5vh, 4.5rem) !important;
+  right: clamp(1.5rem, 5vw, 6rem) !important;
+  top: auto !important;
+  left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  width: max-content !important;
+  padding: 0 0 0.25rem 0 !important;
+  margin: 0 !important;
+  font-family: var(--sans) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: capitalize !important;
+  color: var(--accent) !important;
+  border-bottom: 1px solid var(--accent) !important;
+  border-top: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 105 !important;
+  line-height: 1.2 !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__talk b {
+  font-size: 1.1em !important;
+  color: var(--accent) !important;
+  font-weight: 400 !important;
+  transition: transform 0.3s ease !important;
+}
+
+.mariam-portfolio:not(.nav-active) .cinematic-nav__talk:hover b {
+  transform: translate(3px, -3px);
+}
+
+/* ─── وضع السايدبار النشط (Nav Active Mode) ─── */
+.mariam-portfolio.nav-active .cinematic-nav {
+  position: fixed !important;
+  inset: 0 auto 0 0 !important;
+  width: var(--sidebar) !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  padding: 2.5rem clamp(1.2rem, 1.8vw, 1.8rem) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  pointer-events: auto !important;
+  background: transparent !important;
+  border-right: 1px solid transparent !important;
+  overflow: hidden !important;
+}
+
+.mariam-portfolio.nav-active .cinematic-nav__brand {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  right: auto !important;
+  color: var(--accent) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .mariam-portfolio.nav-active .cinematic-nav__hero {
-  top: clamp(3.5rem, 9vh, 6rem) !important;
-  left: clamp(1rem, 1.4vw, 1.35rem) !important;
-  width: calc(var(--sidebar) - 2 * clamp(1rem, 1.4vw, 1.35rem)) !important;
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 0.75rem !important;
+  margin-top: 2rem !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .mariam-portfolio.nav-active .cinematic-nav__hero strong {
-  font-size: clamp(1.2rem, 1.8vw, 2rem) !important;
   letter-spacing: -0.05em !important;
-  line-height: 1.05 !important;
+  text-align: left !important;
 }
 
 .mariam-portfolio.nav-active .cinematic-nav__hero p {
   max-width: 14ch !important;
-  margin-top: 0.75rem !important;
+  margin-top: 0 !important;
   text-align: left !important;
-  font-size: clamp(0.75rem, 0.9vw, 1rem) !important;
-  line-height: 1.45 !important;
+}
+
+.mariam-portfolio.nav-active .cinematic-nav__links {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  margin-top: auto !important;
+  border-top: 1px solid var(--line) !important;
+  padding-top: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: var(--ink) !important;
+}
+
+.mariam-portfolio.nav-active .cinematic-nav__links a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 0.75rem 0 !important;
+  border-bottom: 1px solid var(--line) !important;
+  font-family: var(--sans) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+  color: var(--ink) !important;
+  line-height: 1.25 !important;
+  gap: 0.5rem !important;
+}
+
+.mariam-portfolio.nav-active .cinematic-nav__links a b {
+  font-size: 1rem !important;
+  color: var(--accent) !important;
+}
+
+.mariam-portfolio.nav-active .cinematic-nav__talk {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem) !important;
+  padding: 0 0 0.65rem 0 !important;
+  border-top: 1px solid var(--accent) !important;
+  padding-top: 0.75rem !important;
+  border-bottom: 1px solid var(--accent) !important;
+  font-family: var(--sans) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+  line-height: 1.25 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.mariam-portfolio.nav-active .cinematic-nav__talk b {
+  color: var(--accent) !important;
+  font-weight: 500 !important;
 }
 
 /* =============================================
@@ -372,17 +589,17 @@ img, video, svg {
    ============================================= */
 @media (min-width: 1728px) { 
   :root { --sidebar: clamp(11rem, 10vw, 14rem); } 
-  .hero-name { font-size: clamp(12rem, 16vw, 22rem) !important; }
+  .hero-name { font-size: clamp(12rem, 23.5vw, 29rem) !important; }
 }
 
 @media (min-width: 1280px) and (max-width: 1727px) { 
   :root { --sidebar: clamp(9.5rem, 10vw, 12rem); } 
-  .hero-name { font-size: clamp(10rem, 15vw, 18rem) !important; }
+  .hero-name { font-size: clamp(10rem, 23.5vw, 24rem) !important; }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root { --sidebar: clamp(8.5rem, 9vw, 10.5rem); }
-  .hero-name { font-size: clamp(8rem, 14vw, 15rem) !important; }
+  .hero-name { font-size: clamp(8rem, 23vw, 22rem) !important; }
   .portrait-image { height: min(90dvh, 700px); }
 }
 
@@ -397,34 +614,73 @@ img, video, svg {
 
 @media (min-width: 900px) and (max-width: 1023px) {
   :root { --sidebar: clamp(7.5rem, 9vw, 9rem); --marquee-top: 48dvh; }
-  .hero-name { font-size: clamp(7rem, 14vw, 13.5rem) !important; }
+  .hero-name { font-size: clamp(7rem, 22vw, 20rem) !important; }
   .portrait-image { height: min(85dvh, 650px); max-width: 85vw; }
-  .cinematic-nav__hero strong { font-size: clamp(2.2rem, 5.5vw, 5.5rem) !important; }
 }
 
 @media (min-width: 600px) and (max-width: 899px) {
   :root { --sidebar: clamp(7rem, 11vw, 8.5rem); --marquee-top: 52dvh; }
-  .cinematic-hero { padding: 3.5rem 1.5rem 0 calc(var(--sidebar) + 1.5rem); }
-  .hero-name { font-size: clamp(5rem, 13vw, 11rem) !important; left: 0 !important; width: 100vw !important; }
   .portrait-image { height: min(80dvh, 600px); max-width: 88vw; }
-  .cinematic-nav__hero strong { font-size: clamp(1.8rem, 5vw, 4.5rem) !important; }
-  .cinematic-nav__hero p { font-size: clamp(1rem, 1.6vw, 1.5rem) !important; max-width: 22ch !important; }
 }
 
 /* =============================================
    📱 موبايل وتابلت عمودي: من عرض 320px حتى 768px
-   ★ MARIAM تمتد من الحافة للحافة تماماً بأقصى عرض ★
    ============================================= */
 @media (max-width: 768px) {
-  :root { --sidebar: clamp(6.2rem, 15vw, 7.8rem); --marquee-top: 60dvh; }
+  :root { --sidebar: clamp(5.8rem, 18vw, 7.8rem); --marquee-top: 60dvh; }
   .cinematic-hero { height: 100dvh !important; min-height: 100dvh !important; padding: 3.5rem 0.75rem 0 calc(var(--sidebar) + 0.75rem); }
-  .cinematic-nav { width: var(--sidebar); padding: 1rem 0.75rem; }
-  .cinematic-nav__brand { font-size: 0.75rem !important; line-height: 1.2; }
-  .cinematic-nav__links { display: flex !important; flex-direction: column; gap: 0; margin-top: auto; border-top: 1px solid var(--line); color: var(--ink); }
-  .cinematic-nav__links a, .cinematic-nav__talk { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0.65rem 0; border-bottom: 1px solid var(--line); font-size: 0.75rem !important; letter-spacing: 0.1em; }
-  .cinematic-nav__talk { margin-top: 1rem; border-top: 1px solid var(--accent); border-bottom: 0; }
-  .cinematic-nav__talk span { font-size: 0.85rem !important; }
-  .cinematic-nav__links b, .cinematic-nav__talk b { font-size: 0.85rem; color: var(--accent); }
+  
+  .cinematic-nav { 
+    width: var(--sidebar) !important; 
+    padding: 1.5rem 0.4rem !important; 
+  }
+  
+  .cinematic-nav__brand { 
+    font-size: clamp(0.7rem, 2.2vw, 0.82rem) !important; 
+    line-height: 1.25 !important;
+    text-align: center !important;
+    width: 100% !important;
+    word-break: break-word !important;
+  }
+  
+  .cinematic-nav__links { 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 0.65rem !important; 
+    margin-top: auto !important; 
+    border-top: 1px solid var(--line) !important; 
+    color: var(--ink) !important; 
+    width: 100% !important;
+  }
+  
+  .cinematic-nav__links a, 
+  .cinematic-nav__talk { 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: space-between !important; 
+    width: 100% !important; 
+    padding: 0.5rem 0.15rem !important; 
+    border-bottom: 1px solid var(--line) !important; 
+    font-size: clamp(0.65rem, 1.8vw, 0.78rem) !important; 
+    letter-spacing: 0.05em !important; 
+    white-space: nowrap !important;
+  }
+  
+  .cinematic-nav__talk { 
+    margin-top: 0.85rem !important; 
+    border-top: 1px solid var(--accent) !important; 
+    border-bottom: 0 !important; 
+  }
+  
+  .cinematic-nav__talk span { 
+    font-size: clamp(0.75rem, 2vw, 0.9rem) !important; 
+  }
+  
+  .cinematic-nav__links b, 
+  .cinematic-nav__talk b { 
+    font-size: clamp(0.6rem, 1.5vw, 0.72rem) !important; 
+    color: var(--accent) !important; 
+  }
   
   .hero-scroll-space { height: 195svh; }
   
@@ -438,7 +694,6 @@ img, video, svg {
   }
   .portrait-image { height: min(74dvh, 500px); max-width: 92vw; object-position: bottom center; }
   
-  /* ★ MARIAM على الموبايل: 21vw - تمتد بعرض كامل ★ */
   .hero-name { 
     left: 0 !important; 
     right: 0 !important; 
@@ -450,12 +705,69 @@ img, video, svg {
   }
   
   .transition-scene { top: 24%; right: 1rem; width: 60vw; height: 55vh; }
-  .cinematic-nav__hero { top: calc(100dvh - 9rem) !important; left: 1rem !important; width: calc(100vw - 2rem) !important; max-width: calc(100vw - 2rem) !important; }
-  .cinematic-nav__hero strong { font-size: clamp(1.8rem, 5.5vw, 3.5rem) !important; }
-  .cinematic-nav__hero p { font-size: clamp(0.95rem, 2.5vw, 1.35rem) !important; max-width: 20ch !important; }
-  .mariam-portfolio.nav-active .cinematic-nav__hero { top: 3rem !important; left: 0.55rem !important; width: calc(var(--sidebar) - 1.1rem) !important; flex-direction: column !important; align-items: flex-start !important; }
-  .mariam-portfolio.nav-active .cinematic-nav__hero strong { font-size: 1.15rem !important; }
-  .mariam-portfolio.nav-active .cinematic-nav__hero p { max-width: 13ch !important; text-align: left !important; font-size: 0.65rem !important; margin-top: 0.55rem !important; }
+  
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__hero {
+    position: fixed !important;
+    bottom: clamp(5rem, 14vh, 8rem) !important;
+    left: 1rem !important;
+    right: auto !important;
+    width: calc(100vw - 2rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__hero strong {
+    font-size: clamp(1.6rem, 5.5vw, 2.5rem) !important;
+    line-height: 0.9 !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__hero p {
+    font-size: clamp(0.8rem, 2.5vw, 1.05rem) !important;
+    max-width: 100% !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__links {
+    position: fixed !important;
+    bottom: clamp(1.25rem, 3.5vh, 2rem) !important;
+    left: 1rem !important;
+    right: auto !important;
+    width: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__links a {
+    font-size: clamp(0.72rem, 2vw, 0.92rem) !important;
+    gap: 0.3rem !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__links a b {
+    font-size: 1em !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__talk {
+    position: fixed !important;
+    bottom: clamp(1.25rem, 3.5vh, 2rem) !important;
+    right: 1rem !important;
+    left: auto !important;
+    font-size: clamp(0.72rem, 2vw, 0.92rem) !important;
+    gap: 0.3rem !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__talk b {
+    font-size: 1em !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__brand {
+    top: 1.5rem !important;
+    left: 1rem !important;
+    font-size: clamp(0.65rem, 1.8vw, 0.82rem) !important;
+  }
 }
 
 /* 📱 موبايل متوسط: max-width 520px */
@@ -470,11 +782,14 @@ img, video, svg {
     left: 0 !important; 
     width: 100vw !important;
   }
-  .cinematic-nav__hero { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; top: calc(100dvh - 10.5rem) !important; left: 1rem !important; width: calc(100vw - 2rem) !important; }
-  .cinematic-nav__hero p { text-align: left !important; max-width: 100% !important; font-size: clamp(0.9rem, 4vw, 1.25rem) !important; }
-  .cinematic-nav__hero strong { font-size: clamp(1.4rem, 6.5vw, 2.5rem) !important; }
-  .mariam-portfolio.nav-active .cinematic-nav__hero { gap: 0.3rem !important; top: 3rem !important; }
-  .mariam-portfolio.nav-active .cinematic-nav__hero p { font-size: 0.55rem !important; max-width: 12ch !important; }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__hero strong {
+    font-size: clamp(1.4rem, 6vw, 2rem) !important;
+  }
+
+  .mariam-portfolio:not(.nav-active) .cinematic-nav__hero p {
+    font-size: clamp(0.75rem, 3vw, 1rem) !important;
+  }
 }
 
 /* 📱 موبايل صغير: max-width 430px */
@@ -499,8 +814,6 @@ img, video, svg {
     left: 0 !important; 
     width: 100vw !important;
   }
-  .cinematic-nav__hero strong { font-size: clamp(1.2rem, 5.5vw, 2rem) !important; }
-  .cinematic-nav__hero p { font-size: 0.85rem !important; }
 }
 
 /* 📱 موبايل نحيل: max-width 360px */
@@ -521,8 +834,6 @@ img, video, svg {
 @media (max-width: 320px) {
   :root { --sidebar: 4.2rem; }
   .cinematic-hero { padding: 2.5rem 0.4rem 0 calc(var(--sidebar) + 0.4rem); }
-  .cinematic-nav__hero strong { font-size: 1.1rem !important; }
-  .cinematic-nav__hero p { font-size: 0.78rem !important; }
   .hero-name { 
     font-size: 24.5vw !important;
     letter-spacing: -0.088em !important;
@@ -532,7 +843,7 @@ img, video, svg {
 }
 
 /* =============================================
-   ♿ ACCESSIBILITY - REDUCED MOTION
+   ♿ ACCESSIBILITY - REDUCED MOTION (الهيرو)
    ============================================= */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -2021,7 +2332,7 @@ img, video, svg {
 }
 
 /* =============================================
-   ♿ ACCESSIBILITY - REDUCED MOTION
+   ♿ ACCESSIBILITY - REDUCED MOTION (About)
    ============================================= */
 @media (prefers-reduced-motion: reduce) {
   .journey-card,

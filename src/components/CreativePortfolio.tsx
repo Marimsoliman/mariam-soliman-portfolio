@@ -130,9 +130,9 @@ export function CreativePortfolio() {
         <TechMarquee />
 
         <div className="cinematic-nav__links">
-          <a href="#about"><span>About</span><b>↗</b></a>
-          <a href="#work"><span>Work</span><b>↗</b></a>
-          <a href="#services"><span>Services</span><b>↗</b></a>
+          <a href="#about"><span>About</span><b aria-hidden="true">↗</b></a>
+          <a href="#work"><span>Work</span><b aria-hidden="true">↗</b></a>
+          <a href="#services"><span>Services</span><b aria-hidden="true">↗</b></a>
         </div>
         
         <a className="cinematic-nav__talk" href="mailto:mariamsoliman.dev@gmail.com">
