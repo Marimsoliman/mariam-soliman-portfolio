@@ -171,3 +171,28 @@ export const navItems = [
   { id: "experiments", label: "Experiments", index: "03" },
   { id: "contact", label: "Contact", index: "04" },
 ] as const;
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.service-card-trigger');
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (event) => {
+      event.stopPropagation();
+
+      const wasActive = card.classList.contains('is-active');
+
+      cards.forEach((item) => {
+        item.classList.remove('is-active');
+      });
+
+      if (!wasActive) {
+        card.classList.add('is-active');
+      }
+    });
+  });
+
+  document.addEventListener('click', () => {
+    cards.forEach((card) => {
+      card.classList.remove('is-active');
+    });
+  });
+});
